@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Heroku Example</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        .navbar-brand {
+            font-family: 'Roboto Condensed', sans-serif;
+        }
+
+        /* Features */
+        section#features {
+            margin: 50px auto;
+            width: 70%;
+            max-width: 1260px;
+        }
+
+        h1.title {
+            font-weight: bold
+        }
+
+        div.section-content {
+            width: 100%;
+            margin-top: 25px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: 1fr 1fr;
+            grid-gap: 50px
+        }
+
+        section#features i { font-size: 1em; }
+
+        section#features h2 {
+            font-weight: 600;
+            margin-bottom: 15px
+        }
+
+        @media (max-width: 1000px) {
+            section#features h1.title { text-align: center; }
+            div.section-content {
+                grid-template-columns: 1fr;
+                grid-template-rows: 1fr 1fr 1fr 1fr;
+                text-align: center;
+            }
+        }
+
+        /* Footer */
+        footer {
+            position: relative;
+            top: 56px;
+            width: 100%;
+            height: 60px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            
+            
+            background-color: #1E1A1B;
+            color: #FFFFFF;
+        }
+
+        .footer-link {
+            color: #FFFFFF;
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar" role="navigation" aria-label="main navigation">
+        <div class="navbar-brand">
+            <a class="navbar-item" href="/">
+                <h1 class="title">SB+H</h1>
+            </a>
+
+            <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false"
+                data-target="navbarBasicExample">
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+            </a>
+        </div>
+
+        <div id="navbarBasicExample" class="navbar-menu">
+            <div class="navbar-start">
+                <a class="navbar-item">
+                    Documentation
+                </a>
+            </div>
+
+            <form th:action="@{/}" method="post">
+                <div class="navbar-end">
+                    <div class="navbar-item">
+                        <div class="buttons">
+                            <button class="button is-dark" type="submit" th:name="choice" th:value="SignUp">
+                                <strong>Sign up</strong>
+                            </button>
+                            <button class="button is-light" type="submit" th:name="choice" th:value="Login">
+                                Log in
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </nav>
+
+    <section class="hero is-medium is-dark is-bold">
+        <div class="hero-body">
+            <div class="container">
+                <h1 class="title">
+                    Spring Boot + Heroku
+                </h1>
+                <h2 class="subtitle">
+                    What better way to create and deploy your web app?
+                </h2>
+            </div>
+        </div>
+    </section>
+
+    <section id="features">
+        <h1 class="title">Features</h1>
+        <div class="section-content">
+            <div class="section-content-item">
+                <h2><i class="fa fa-shield" aria-hidden="true"></i> Fast Development 💻</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod doloremque facilis praesentium quos consequatur veritatis ullam facere porro iure quaerat iusto</p>
+            </div>
+            <div class="section-content-item">
+                <h2><i class="fa fa-bug" aria-hidden="true"></i> Custom Configuration 👍</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod doloremque facilis praesentium quos consequatur veritatis ullam facere porro iure quaerat iusto</p>
+            </div>
+            <div class="section-content-item">
+                <h2><i class="fa fa-globe" aria-hidden="true"></i> Rapid Deployment 🔥</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod doloremque facilis praesentium quos consequatur veritatis ullam facere porro iure quaerat iusto</p>
+            </div>
+            <div class="section-content-item">
+                <h2><i class="fa fa-child" aria-hidden="true"></i> App Metrics 📊</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod doloremque facilis praesentium quos consequatur veritatis ullam facere porro iure quaerat iusto</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div><p>Made with ♥️ by <a href="https://github.com/tyeporter" class="footer-link">Tye Porter</a></p></div>
+    </footer>
+</body>
+</html>
